@@ -8,3 +8,18 @@
 то вводятся эти символы. Программа должна вывести на экран любой
 символ алфавита от 'a' до 'f' включительно.
 """
+from random import random
+
+left, right = [int(i) for i in input('Введите начальную границу и конечную через пробел, чтобы загадать целое число\n').split(' ')]
+numb = int(random() * (right - left + 1) + left)
+print(f'Загадано число {numb}')
+
+left, right = [float(i) for i in input('Введите начальную границу и конечную через пробел, чтобы загадать дробное число\n').split(' ')]
+numb = random() * (right - left + 1) + left
+print(f'Загадано число {round(numb,3)}')
+
+left, right = [ord(i) for i in input('Введите начальную границу букв и конечную через пробел, чтобы загадать букву\n').split(' ')]
+numb = int(random() * (right - left + 1) + left)
+letter = chr(numb)
+print(f'Загаданная буква {letter}')
+
