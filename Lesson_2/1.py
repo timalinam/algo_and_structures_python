@@ -9,3 +9,48 @@
 Также сообщать пользователю о невозможности деления на ноль,
 если он ввел 0 в качестве делителя.
 """
+print('Решение через цикл')
+sign = ''
+while sign != '0':
+    a = int(input('A = \n'))
+    b = int(input('B = \n'))
+    sign = input('Введите знак операции (*,/,+,-), или введите 0, чтобы выйти\n')
+    if sign == '/':
+        if b == 0:
+            print('На ноль делить нельзя')
+            continue
+        print(a / b)
+    elif sign == '*':
+        print(a * b)
+    elif sign == '-':
+        print(a - b)
+    elif sign == '+':
+        print(a + b)
+    elif sign != '0':
+        print('Вы ввели неверный знак')
+
+
+def calculator():
+    a = int(input('A = \n'))
+    b = int(input('B = \n'))
+    sign = input('Введите знак операции (*,/,+,-), или введите 0, чтобы выйти\n')
+    if sign == '/':
+        if b == 0:
+            print('На ноль делить нельзя')
+        else:
+            print(a / b)
+    elif sign == '*':
+        print(a * b)
+    elif sign == '-':
+        print(a - b)
+    elif sign == '+':
+        print(a + b)
+    elif sign != '-' and sign != '+' and sign != '*' and sign != '/' and sign != '0':
+        print('Вы ввели неверный знак')
+    if sign != '0':
+        calculator()
+    return
+
+print('Решение через рекурсию')
+
+calculator()
