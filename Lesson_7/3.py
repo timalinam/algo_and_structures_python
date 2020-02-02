@@ -6,3 +6,25 @@
 массива. Но если это слишком сложно, то используйте метод сортировки,
  который не рассматривался на уроках
 """
+import random
+
+
+def count_median(random_list):
+    for i in random_list:
+        median = i
+        less = 0
+        more = 0
+        for j in random_list:
+            if j >= i:
+                more += 1
+            if j < i:
+                less += 1
+        if more - 1 == less:
+            return median
+
+
+m = int(input('Введите m\n'))
+
+r_list = [random.randint(1, 100) for _ in range((2*m + 1))]
+
+print(f'Медиана массива {r_list} :\n{count_median(r_list)}')
